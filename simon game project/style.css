@@ -1,0 +1,162 @@
+
+body {
+  background: linear-gradient(to left, #385a94, #888888);
+  font-family: 'Balsamiq Sans', cursive;
+  color: #020f26;
+  text-align: center;
+}
+
+h1 {
+  filter: grayscale(100%);
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+#outer-circle {
+  background: #385a94;
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  border: 10px solid #000;
+  box-shadow: 8px 8px 15px 5px #888888;
+}
+
+.quarter {
+  flex: 1 0 50%;
+  border: 5px solid #000;
+  box-sizing: border-box;
+}
+
+#top-left {
+  border-radius: 100% 0 0 0;
+  background: darkgreen;
+}
+
+#top-right {
+  border-radius: 0 100% 0 0;
+  background: darkred;
+}
+
+#bottom-left {
+  border-radius: 0 0 0 100%;
+  background: goldenrod;
+}
+
+#bottom-right {
+  border-radius: 0 0 100% 0;
+  background: darkblue;
+}
+
+.scores {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .game-container {
+    margin-top: 30px;
+  }
+
+  #outer-circle {
+    height: 300px;
+    width: 300px;
+    border-width: 5px;
+  }
+
+  .quarter {
+    border-width: 2px;
+  }
+
+  .scores {
+    margin-bottom: 10px;
+  }
+
+  .controls {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .switch {
+    margin-bottom: 10px;
+  }
+
+  #start-button {
+    margin-top: 10px;
+  }
+}
